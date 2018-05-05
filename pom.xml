@@ -8,7 +8,6 @@
     <artifactId>yang</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <package>pom</package>
 
     <name>yang</name>
     <description>My copy project from zheng project</description>
@@ -22,20 +21,29 @@
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
     </properties>
 
-    <dependencyManagement>
+
+    <distributionManagement>
         <snapshotRepository>
-            <id>mynexus_snapshots</id>
+            <id>mynexus-snapshots</id>
             <url>${mynexus.url}/repository/maven-snapshots/</url>
-            <snapshots><enabled>true</enabled></snapshots>
-            <releases><enabled>false</enabled></releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
         </snapshotRepository>
         <repository>
-            <id>mynexus_releases</id>
+            <id>mynexus-releases</id>
             <url>${mynexus.url}/repository/maven-releases/</url>
-            <snapshots><enabled>false</enabled></snapshots>
-            <releases><enabled>true</enabled></releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
         </repository>
-    </dependencyManagement>
+    </distributionManagement>
     <modules>
         <module>yang-common</module>
     </modules>
